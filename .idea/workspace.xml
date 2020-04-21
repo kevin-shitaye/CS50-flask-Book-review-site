@@ -1,18 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad5d7559-ef61-4dca-860c-541bd1c0fd69" name="Default Changelist" comment="" />
+    <list default="true" id="ad5d7559-ef61-4dca-860c-541bd1c0fd69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/easy-install.pth" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Lib/site-packages/easy-install.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Lib/site-packages/setuptools-39.1.0-py3.8.egg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8-script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-3.8.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install-script.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/easy_install.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Scripts/easy_install.exe.manifest" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main_layout.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/templates/main_layout.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/application.py" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="640" />
     <option name="width" value="640" />
     <option name="height" value="752" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -26,11 +94,24 @@
               <item name="book_review" type="b2602c69:ProjectViewProjectNode" />
               <item name="book_review" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="book_review" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="book_review" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (book_review) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -43,6 +124,34 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="application" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="book_review" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/application.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.application" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -59,17 +168,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1298" height="770" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3294702" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3294702" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3294702" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -78,5 +188,31 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/main_layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
