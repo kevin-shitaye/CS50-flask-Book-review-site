@@ -1,8 +1,71 @@
 {% extends 'main_layout.html' %}
 
-{% block head %} {% endblock %}
+{% block head %}Home {% endblock %}
+
+{% block right_nav %}
+    <li class="nav-item"> <a href="" class="nav-link">Sign in</a></li>
+    <li class="nav-item"> <a href="" class="nav-link">Sign up</a></li>  
+    
+{% endblock %}
 
 {% block body %}
 
+<div class="jumbotron jumbotron-fluid">
+  <div class="container" style="background-color: rgba(15, 15, 15, 0.6);">
+    <h1 class="font-weight-bolder">Welcome</h1>
+    <p class="lead font-weight-bolder pb-2" >Greetings, are you here to make decisions on what book to read. <br> Your in the right place sign in and get it going.</p>
+    <a class="btn btn-outline-warning btn-lg" href="">Books</a>
+  </div>
+  
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-md-4 mx-auto my-2 border">
+      <h3>About us</h3>
+        <p>If you are looking for a simple but a useful book review site, you have come to the right place. You can read details about many books, see reviews that people made and can give your own comments on the books. </p>
+    </div>
+
+    <div class="col-sm-12 col-md-4 mx-auto my-2 border">
+      <h3>What we offer?</h3>
+        <p>We have carefully selected over five thousand books for you. You can also see the ratings from GoodReads, a much border book review website, and make your decisions with less efforts and even rate some if you like to. </p>
+    </div>
+
+    <div class="col-sm-12 col-md-4 mx-auto my-2 border">
+      <h3>How it works?</h3>
+      <h6>Are you new to our website?</h6>
+      <ul>
+        <li>YES? Then you must first register first to get our servcie. Go to the sign up page and fill out the informations and you will be good to go. It wont take two minute promise!!! </li>
+        <li>NO? If so then just sign in and you will find the list of books. You can search through our search enginne with the book title, author or the isbn code. Give it a try!!!</li>
+      </ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<style>
+    body {
+      background-color: rgba(157, 198, 231, 0.6);
+    }
+    .jumbotron {
+    background-image:url('/static/image/photo.jpg');
+    height:400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom:1px solid #ff6a00
+    
+  }
+  .jumbotron .container {
+    position:relative;
+    top:30px;
+    color:rgb(239, 231, 248);
+  }
+</style>
 
 {% endblock %}

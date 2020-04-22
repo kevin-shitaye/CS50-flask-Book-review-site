@@ -2,10 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block head %} {% endblock %}
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+     <!-- Popper JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/static/main.css">
+    <title>{% block head %} {% endblock %}</title>
 </head>
 <body>
+    <div class="container-fluid px-0">
+    <nav class="navbar navbar-expand  sticky-top py-0" style="background-color: #322525;">
+        <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item" style="color: thistle;"><h1>LOGO</h1></li>
+        </ul>
+        <ul class="nav navbar-nav">
+           {% block right_nav %} {% endblock %}
+        </ul>
 
-{% block body %} {% endblock %}
+    </nav>    
+
+    </div>
+    <div class="container-fluid">
+        {% block body %} {% endblock %}
+    </div>
+
+    <footer class="page-footer font-small pt-4" style="background-color: #322525; color: aliceblue;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col">
+              <h5>Heading</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae perspiciatis deleniti, quis quam suscipits</p>
+              <p><a href="#"><i class="fab fa-facebook-square"></i></a> <a href="#"></i> <i class="fab fa-instagram"></i></a></p>
+ 
+            </div>
+ 
+            <div class="col">
+              
+              <ul>
+               <h5>Links</h5>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./register.html">Sign up</a></li>
+                <li><a href="./service.html">Get our service</a></li>
+                <li><a href="./login.html">Login</a></li>
+              </ul>
+ 
+            </div>
+ 
+            <div class="col-sm-12 col-md-4" id="foot_location">
+              <h5>Location</h5>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, iure.</p>
+              <p><i class="fas fa-phone-alt"></i>(251) 465-6465</p>
+              <p><i class="far fa-envelope"></i>jhgdh@gmail.com</p>
+            </div>
+ 
+          </div>
+ 
+        </div>
+ 
+ 
+      </footer>
+     
+    
 </body>
 </html>
