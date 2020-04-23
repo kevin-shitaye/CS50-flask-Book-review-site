@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
 
 
 app = Flask(__name__)
@@ -22,8 +24,24 @@ class Books(db.Model):
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    time = datetime.now()
+    greetings = ""
+    if time.hour in range(5, 12):
+        greetings = "Good morning"
+    elif time.hour in range(12, 17):
+        greetings = "Good afternoon"
+    elif time.hour in range(17, 5):
+        greetings = "Good evening"
+    return render_template("index.html", greetings=greetings)
 
+
+@app.route('/sign_in', methods=['GET', 'POST'])
+def sign_in():
+    return render_template("sign_in.html")
+
+@app.route('/sign_up', methods=['GET', 'POST'])
+def sign_up():
+    return render_template("sign_up.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
