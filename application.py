@@ -12,14 +12,22 @@ db = SQLAlchemy(app)
 class Users(db.Model):
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
+    logged_in = db.Column(db.Boolean, default=0)
 
 
 class Books(db.Model):
-    isbn = db.Column(db.Integer, primary_key=True)
+    isbn = db.Column(db.String, primary_key=True)
     title = db.Column(db.String, nullable=False)
     author = db.Column(db.String, nullable=False)
     year = db.Column(db.String(4))
+
+    def __init__(self, isbn, title, author, year):
+        self.isbn = isbn
+        self.title = title
+        self.author = author
+        self.year = year
 
 
 @app.route('/')
@@ -45,3 +53,5 @@ def sign_up():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
