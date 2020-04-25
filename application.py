@@ -1,7 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+from sqlalchemy import or_
 
 
 app = Flask(__name__)
@@ -15,6 +15,11 @@ class Users(db.Model):
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
     logged_in = db.Column(db.Boolean, default=0)
+
+    def __init__(self, username, email, password):
+        self.username = username
+        self.password = password
+        self.email = email
 
 
 class Books(db.Model):
@@ -32,6 +37,7 @@ class Books(db.Model):
 
 @app.route('/')
 def index():
+    # For giving different greetings based on the time
     time = datetime.now()
     greetings = ""
     if time.hour in range(5, 12):
@@ -40,6 +46,7 @@ def index():
         greetings = "Good afternoon"
     elif time.hour in range(17, 5):
         greetings = "Good evening"
+
     return render_template("index.html", greetings=greetings)
 
 
@@ -47,9 +54,35 @@ def index():
 def sign_in():
     return render_template("sign_in.html")
 
+
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
-    return render_template("sign_up.html")
+    if request.method == "POST":
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        user = Users(username=username, email=email, password=password)
+        try:
+            db.session.add(user)
+            db.session.commit()
+            return redirect('/sign_in')
+        except:
+            return "Unable to register"
+    else:
+        return render_template("sign_up.html")
+
+
+@app.route('/books', methods=['GET', 'POST'])
+def books():
+    if request.method == 'POST':
+        tag = request.form['search']
+        search = "%{}%".format(tag)
+        book_list = Books.query.filter(or_(Books.title.ilike(search), Books.author.ilike(search), Books.isbn.ilike(search)))
+
+    else:
+        book_list = Books.query.all()
+    return render_template('books.html', book_list=book_list)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
