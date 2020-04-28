@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, g, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy import or_
@@ -7,6 +7,8 @@ from sqlalchemy import or_
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bglupbkmkcgrot:b0680f8dbfbadfe46ce320899aa6f6dd9f2d3f54fb750889c525d492c0710d6c@ec2-52-202-146-43.compute-1.amazonaws.com:5432/dd4jfcjma8pl13'
 db = SQLAlchemy(app)
+app.secret_key = 'no1coder'
+
 
 
 class Users(db.Model):
@@ -14,7 +16,7 @@ class Users(db.Model):
     username = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String, nullable=False)
     password = db.Column(db.String, nullable=False)
-    logged_in = db.Column(db.Boolean, default=0)
+    
 
     def __init__(self, username, email, password):
         self.username = username
@@ -34,6 +36,12 @@ class Books(db.Model):
         self.author = author
         self.year = year
 
+@app.before_request
+def before_request():
+    g.user = None
+    if 'user_id' in session:
+        user = Users.query.filter(Users.user_id == session['user_id'])
+        g.user = user
 
 @app.route('/')
 def index():
@@ -52,6 +60,15 @@ def index():
 
 @app.route('/sign_in', methods=['GET', 'POST'])
 def sign_in():
+    if request.method == 'POST':
+        session.pop('user_id', None)
+        username = request.form['username']
+        password = request.form['password']
+        user = Users.query.filter(Users.username == username, Users.password == password).first()
+        if user:
+            session['user_id'] = user.user_id
+            return redirect(url_for('books'))
+        return redirect(url_for('sign_in'))
     return render_template("sign_in.html")
 
 
@@ -74,7 +91,9 @@ def sign_up():
 
 @app.route('/books', methods=['GET', 'POST'])
 def books():
-    if request.method == 'POST':
+    if g.user is None:
+        return redirect(url_for('sign_in'))
+    elif request.method == 'POST':
         tag = request.form['search']
         search = "%{}%".format(tag)
         book_list = Books.query.filter(or_(Books.title.ilike(search), Books.author.ilike(search), Books.isbn.ilike(search)))
@@ -82,6 +101,12 @@ def books():
     else:
         book_list = Books.query.all()
     return render_template('books.html', book_list=book_list)
+
+
+@app.route('/book')
+def book():
+    return render_template('book.html')
+
 
 
 if __name__ == "__main__":
